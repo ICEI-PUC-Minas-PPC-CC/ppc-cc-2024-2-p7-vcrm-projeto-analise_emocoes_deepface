@@ -1,42 +1,46 @@
-# TÍTULO DO PROJETO
+# Análise de expressões com o DeepFace
 
 `PPC-CC: PUC Poços de Caldas - Ciência da Computação`
-`Disciplina: NOME DA DISCIPLINA`
-`2021 - Semestre 1`
+`Disciplina: Visão Computacional`
+`2024 - Semestre 2`
 
 ## Integrantes
 
-- Jeff Bezos
-- Bill Gates
-- Larry Ellison
-- Mark Zuckerberg
+- Angelica dos Santos
 
 ## Professor
 
-- Mestre Yoda
+- Will Machado
 
 # Documentação
+Aplicação para reconhecimento de expressões faciais para análise de emoções humanas.
 
-<ol>
-<li><a href="docs/1-Documentação de Contexto.md"> Documentação de Contexto</a></li>
-<li><a href="docs/2-Especificação do Projeto.md"> Especificação do Projeto</a></li>
-<li><a href="docs/3-Projeto de Interface.md"> Projeto de Interface</a></li>
-<li><a href="docs/4-Metodologia.md"> Metodologia</a></li>
-<li><a href="docs/5-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
-<li><a href="docs/6-Template padrão do Site.md"> Template padrão do Site</a></li>
-<li><a href="docs/7-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
-<li><a href="docs/8-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
-<li><a href="docs/9-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
-<li><a href="docs/10-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
-<li><a href="docs/11-Registro de Testes de Usabilidade.md"> Registro de Testes de Usabilidade</a></li>
-<li><a href="docs/12-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
-<li><a href="docs/13-Referências.md"> Referências</a></li>
-</ol>
+### Ferramentas utilizadas
+- Python
+    - [DeepFace](https://github.com/serengil/deepface)
+    - OpenCV
+    - Flask
+    - Matplotlib
+- Pycharm (IDE)
 
-# Código
+### instalação e execução
+Instale o [Python](https://www.python.org)
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+Execute o seguinte comando
 
-# Apresentação
+`pip install opencv-python  Flask  deepface matplotlib`
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+ou, caso tiver instalado o Python3:
+
+`pip3 install opencv-python  Flask  deepface matplotlib`
+
+Após a instalação, vá para a pasta /code e execute:
+
+`python main.py` ou `python3 main.py`
+
+A Aplicação irá inicial no local host, na seguinte porta:
+
+http://127.0.0.1:5000
+
+### Demonstração:
+[link do video passo a passo](https://www.youtube.com/watch?v=XfoZM_Pk4Yk)

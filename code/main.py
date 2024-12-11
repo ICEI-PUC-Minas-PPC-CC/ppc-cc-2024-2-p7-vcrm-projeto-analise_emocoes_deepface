@@ -5,7 +5,7 @@ from deepface import DeepFace
 import matplotlib
 import shutil
 
-matplotlib.use('Agg')  # Usar o backend Agg
+matplotlib.use('Agg')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static'
@@ -14,21 +14,16 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 def limpar_pasta_static():
     pasta_static = 'static'
     if os.path.exists(pasta_static):
-        shutil.rmtree(pasta_static)  # Remove a pasta e todo o seu conteúdo
-    os.makedirs(pasta_static, exist_ok=True)  # Recria a pasta vazia
+        shutil.rmtree(pasta_static)
+    os.makedirs(pasta_static, exist_ok=True)
 
-
-# Funções de processamento de imagem já definidas aqui (como no código anterior)
 def detectar_rostos(imagem):
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     gray = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
     return face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5), gray
 
-
 def processar_rosto(face_image):
-    # Como definido anteriormente
-    return face_image  # Retorne a imagem processada
-
+    return face_image
 
 def analisar_emocoes(faces):
     resultados = []
@@ -39,14 +34,12 @@ def analisar_emocoes(faces):
 
         resultado = DeepFace.analyze(img2, actions=['emotion'], enforce_detection=False)
 
-        # Gerar o gráfico de emoções
         if resultado:
             gerar_grafico_emocoes(resultado[0]['emotion'], i, img_path)
 
         resultados.append(resultado)
 
     return resultados
-
 
 def gerar_grafico_emocoes(emocoes, indice, img_path):
     import matplotlib.pyplot as plt
@@ -63,16 +56,13 @@ def gerar_grafico_emocoes(emocoes, indice, img_path):
     plt.xticks(rotation=45)
     plt.grid(axis='y', linestyle='--', alpha=0.7)
 
-    # Salvar a figura
     plt.tight_layout()
     plt.savefig(f'{app.config["UPLOAD_FOLDER"]}/grafico_emocoes_{indice}.png')
-    plt.close()  # Fechar a figura para liberar recursos
-
+    plt.close()
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -98,7 +88,6 @@ def upload_file():
         return render_template('result.html', resultados=resultados)
     else:
         return render_template('result.html', resultados=[])
-
 
 if __name__ == "__main__":
     limpar_pasta_static()
