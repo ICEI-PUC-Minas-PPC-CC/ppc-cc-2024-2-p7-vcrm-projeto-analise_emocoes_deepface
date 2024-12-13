@@ -43,4 +43,4 @@ A Aplicação irá inicial no local host, na seguinte porta:
 http://127.0.0.1:5000
 
 ### Demonstração:
-[link do video passo a passo](https://www.youtube.com/watch?v=XfoZM_Pk4Yk)
+[link do video passo a passo](https://www.youtube.com/watch?v=0j7nynjoOww)
